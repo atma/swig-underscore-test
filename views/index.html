@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}Home Page{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+    AppCfg = {
+        locale: {{ locale }}
+    };
+</script>
+{% endblock %}
+
+{% block body %}
+<span class="thumb-small avatar">
+  <img class="img-circle" alt="<%= user.name.first %> {{ __('Photo') }}"
+       src="/<% if(user.picture) { %>images/<%= user.picture %>.jpg<% } else {%>img/placeholders/user-picture-<%= user.gender %>.png<%
+   } %>" />
+</span>
+{% endblock %}
